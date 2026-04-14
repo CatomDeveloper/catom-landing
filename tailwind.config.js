@@ -1,0 +1,76 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  darkMode: "class",
+  theme: {
+    extend: {
+      "colors": {
+        "on-tertiary": "#ffffff",
+        "surface-container-lowest": "#ffffff",
+        "surface-dim": "#d9dadc",
+        "surface": "#f9f9fb",
+        "tertiary-container": "#747479",
+        "on-primary-container": "#fefcff",
+        "error-container": "#ffdad6",
+        "primary-container": "#0070eb",
+        "surface-bright": "#f9f9fb",
+        "on-tertiary-container": "#fefcff",
+        "inverse-surface": "#2f3132",
+        "tertiary-fixed-dim": "#c7c6cb",
+        "background": "#f9f9fb",
+        "outline-variant": "#c1c6d7",
+        "on-error": "#ffffff",
+        "primary": "#0058bc",
+        "on-tertiary-fixed": "#1a1b1f",
+        "on-secondary-fixed-variant": "#474649",
+        "error": "#ba1a1a",
+        "primary-fixed": "#d8e2ff",
+        "secondary-container": "#e2dfe1",
+        "tertiary-fixed": "#e3e2e7",
+        "on-surface-variant": "#414755",
+        "inverse-primary": "#adc6ff",
+        "surface-container-low": "#f3f3f5",
+        "on-tertiary-fixed-variant": "#46464b",
+        "secondary-fixed": "#e4e2e4",
+        "on-secondary-container": "#636264",
+        "on-secondary": "#ffffff",
+        "surface-variant": "#e2e2e4",
+        "outline": "#717786",
+        "surface-container-high": "#e8e8ea",
+        "tertiary": "#5b5c60",
+        "on-primary-fixed-variant": "#004493",
+        "on-primary-fixed": "#001a41",
+        "secondary": "#5f5e60",
+        "on-error-container": "#93000a",
+        "surface-container-highest": "#e2e2e4",
+        "surface-tint": "#005bc1",
+        "on-surface": "#1a1c1d",
+        "on-primary": "#ffffff",
+        "secondary-fixed-dim": "#c8c6c8",
+        "inverse-on-surface": "#f0f0f2",
+        "primary-fixed-dim": "#adc6ff",
+        "on-background": "#1a1c1d",
+        "surface-container": "#eeeef0",
+        "on-secondary-fixed": "#1b1b1d"
+      },
+      "borderRadius": {
+        "DEFAULT": "0.25rem",
+        "lg": "0.5rem",
+        "xl": "0.75rem",
+        "full": "9999px"
+      },
+      "fontFamily": {
+        "headline": ["Inter", "sans-serif"],
+        "body": ["Inter", "sans-serif"],
+        "label": ["Inter", "sans-serif"]
+      }
+    },
+  },
+  plugins: [
+    require('@tailwindcss/forms'),
+    require('@tailwindcss/container-queries'),
+  ],
+}

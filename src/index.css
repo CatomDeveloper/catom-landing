@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-body antialiased bg-surface text-on-surface;
+  }
+}
+
+@layer components {
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  }
+  
+  .glass-nav {
+    @apply backdrop-blur-3xl;
+    -webkit-backdrop-filter: blur(20px);
+  }
+  
+  .hero-gradient {
+    background: linear-gradient(135deg, #0058bc 0%, #0070eb 100%);
+  }
+  
+  .asymmetric-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+  }
+}
+
+@media (max-width: 1024px) {
+  .asymmetric-grid {
+    grid-template-columns: 1fr;
+  }
+}

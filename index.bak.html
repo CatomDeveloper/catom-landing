@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NovaTech | Nexus Forge - The Digital Curator</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-dim": "#d9dadc",
+                        "surface": "#f9f9fb",
+                        "tertiary-container": "#747479",
+                        "on-primary-container": "#fefcff",
+                        "error-container": "#ffdad6",
+                        "primary-container": "#0070eb",
+                        "surface-bright": "#f9f9fb",
+                        "on-tertiary-container": "#fefcff",
+                        "inverse-surface": "#2f3132",
+                        "tertiary-fixed-dim": "#c7c6cb",
+                        "background": "#f9f9fb",
+                        "outline-variant": "#c1c6d7",
+                        "on-error": "#ffffff",
+                        "primary": "#0058bc",
+                        "on-tertiary-fixed": "#1a1b1f",
+                        "on-secondary-fixed-variant": "#474649",
+                        "error": "#ba1a1a",
+                        "primary-fixed": "#d8e2ff",
+                        "secondary-container": "#e2dfe1",
+                        "tertiary-fixed": "#e3e2e7",
+                        "on-surface-variant": "#414755",
+                        "inverse-primary": "#adc6ff",
+                        "surface-container-low": "#f3f3f5",
+                        "on-tertiary-fixed-variant": "#46464b",
+                        "secondary-fixed": "#e4e2e4",
+                        "on-secondary-container": "#636264",
+                        "on-secondary": "#ffffff",
+                        "surface-variant": "#e2e2e4",
+                        "outline": "#717786",
+                        "surface-container-high": "#e8e8ea",
+                        "tertiary": "#5b5c60",
+                        "on-primary-fixed-variant": "#004493",
+                        "on-primary-fixed": "#001a41",
+                        "secondary": "#5f5e60",
+                        "on-error-container": "#93000a",
+                        "surface-container-highest": "#e2e2e4",
+                        "surface-tint": "#005bc1",
+                        "on-surface": "#1a1c1d",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed-dim": "#c8c6c8",
+                        "inverse-on-surface": "#f0f0f2",
+                        "primary-fixed-dim": "#adc6ff",
+                        "on-background": "#1a1c1d",
+                        "surface-container": "#eeeef0",
+                        "on-secondary-fixed": "#1b1b1d"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Inter", "sans-serif"],
+                        "body": ["Inter", "sans-serif"],
+                        "label": ["Inter", "sans-serif"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .glass-nav { backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
+        .hero-gradient { background: linear-gradient(135deg, #0058bc 0%, #0070eb 100%); }
+        .asymmetric-grid { grid-template-columns: 1.2fr 0.8fr; }
+        @media (max-width: 1024px) { .asymmetric-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- Top Navigation Shell -->
+<nav class="fixed top-0 w-full z-50 bg-slate-50/80 backdrop-blur-xl transition-all duration-300">
+<div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
+<div class="text-xl font-bold tracking-tighter text-slate-900">NovaTech</div>
+<div class="hidden md:flex items-center gap-10">
+<a class="text-blue-600 font-semibold border-b-2 border-blue-600 transition-colors duration-300" href="#">Solutions</a>
+<a class="text-slate-600 font-medium hover:text-blue-500 transition-colors duration-300" href="#">Platform</a>
+<a class="text-slate-600 font-medium hover:text-blue-500 transition-colors duration-300" href="#">Insights</a>
+<a class="text-slate-600 font-medium hover:text-blue-500 transition-colors duration-300" href="#">About</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="bg-primary-container text-on-primary px-6 py-2.5 rounded-full font-medium text-sm hover:opacity-90 transition-opacity">Get Started</button>
+</div>
+</div>
+</nav>
+<main class="pt-24">
+<!-- Hero Section -->
+<section class="relative min-h-[921px] flex items-center px-8 max-w-7xl mx-auto overflow-hidden">
+<div class="asymmetric-grid grid gap-16 items-center w-full">
+<div class="z-10">
+<span class="inline-block px-4 py-1.5 mb-6 text-xs font-bold tracking-widest uppercase bg-surface-container-high rounded-full">Evolutionary Tech</span>
+<h1 class="text-6xl md:text-8xl font-extrabold tracking-tight leading-[0.95] mb-8">
+                        The Nexus <br/>
+<span class="text-primary">of Forge.</span>
+</h1>
+<p class="text-xl md:text-2xl text-on-surface-variant leading-relaxed mb-10 max-w-xl">
+                        Crafting digital exhibitions through software excellence. We don't just build apps; we curate experiences that define the next generation.
+                    </p>
+<div class="flex flex-wrap gap-4">
+<button class="px-8 py-4 hero-gradient text-white rounded-xl font-semibold shadow-lg shadow-primary/20 flex items-center gap-2 group">
+                            Start Building
+                            <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+<button class="px-8 py-4 bg-surface-container-low text-on-surface font-semibold rounded-xl hover:bg-surface-container-high transition-colors">
+                            View Showcase
+                        </button>
+</div>
+</div>
+<div class="relative h-[600px] hidden lg:block">
+<div class="absolute inset-0 bg-surface-container-low rounded-[3rem] overflow-hidden">
+<img alt="Nexus Technology" class="w-full h-full object-cover mix-blend-overlay opacity-60" data-alt="Modern minimalist server room with blue ambient lighting and sleek hardware racks in a high-tech facility" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyrRMXBxT9KrUeVJ0DzQURbMn7hiWXNVBn9ft-SIvBAE5r8RxxjvDwKEmwjYznGD5R2UhslmHbwJL1cKg1q7jYq3zl4S6H8sHZaF3GzD8xNiJcKQ5vfpJHRUk5lYSWbUAxIPAHEATeA2VedEZkLyGOZV8W3sPtKF9cMN3q-eBl1g3pVd2_o9dZtXfEHTC7lExYRLFYFcRurO0ocl5bjYfhrkFsyBamVesIjydoQNY2wHAL_csd-uq0_6hMO2IaE7IHlhN36NvgWA"/>
+</div>
+<div class="absolute -bottom-10 -left-10 bg-surface-container-lowest p-8 rounded-3xl shadow-xl max-w-xs border border-outline-variant/10">
+<p class="text-4xl font-bold text-primary mb-1">99.9%</p>
+<p class="text-sm font-medium text-on-surface-variant">Uptime guaranteed for all enterprise deployments.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Expertise Areas (Bento Grid Style) -->
+<section class="py-32 px-8 max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+<div class="max-w-2xl">
+<h2 class="text-4xl md:text-5xl font-bold tracking-tight mb-6">Expertise carved from <br/>experience.</h2>
+<p class="text-lg text-on-surface-variant">We specialize in three core pillars that drive modern digital transformation, ensuring every touchpoint is a masterpiece of engineering.</p>
+</div>
+<div class="pb-2">
+<span class="text-sm font-label uppercase tracking-widest opacity-50">Our Capabilities</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6 h-full md:h-[600px]">
+<!-- Web Systems -->
+<div class="md:col-span-8 bg-surface-container-low rounded-3xl p-12 flex flex-col justify-between overflow-hidden relative group">
+<div class="z-10">
+<span class="material-symbols-outlined text-4xl text-primary mb-6">public</span>
+<h3 class="text-3xl font-bold mb-4">Web Ecosystems</h3>
+<p class="text-on-surface-variant max-w-md leading-relaxed">
+                            Developing scalable architectures that handle millions of requests while maintaining millisecond-level responsiveness.
+                        </p>
+</div>
+<img alt="Web Systems" class="absolute -right-20 -bottom-20 w-1/2 opacity-20 grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" data-alt="Abstract visualization of high-speed data flow and network connections in a futuristic digital environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEBhtbkipulVQoFSzjXr_izp4WZEHrEzYbhp8q4tvXjzSvV6iSauc32U70XtTcueaPlEMfd_mW-IIDSQjC_10Q_x6PwNoDrh-JSOlV1fIsGWo-9Q5YOfWrF-kNBPkkNTf7V4K-tCdEt46SLHRquW5_DpU2mHrMNSAL2kyIV22lrI2BN4hGkAZaOUEQdEcKYtafLkxDQfhdq3zYHVuUF583EPQV-rn4nZU_pocvs2ot0NcqwfmGQTXP5gNHi8XhJRMbZtUWyQ3jAw"/>
+</div>
+<!-- AI Forge -->
+<div class="md:col-span-4 bg-primary text-white rounded-3xl p-12 flex flex-col justify-between relative overflow-hidden group">
+<div class="z-10">
+<span class="material-symbols-outlined text-4xl mb-6">auto_awesome</span>
+<h3 class="text-3xl font-bold mb-4">AI Integration</h3>
+<p class="text-blue-100 leading-relaxed">
+                            Bespoke LLM deployments and predictive modeling tools.
+                        </p>
+</div>
+<div class="absolute bottom-0 right-0 p-8 opacity-40">
+<span class="material-symbols-outlined text-9xl">memory</span>
+</div>
+</div>
+<!-- Mobile First -->
+<div class="md:col-span-5 bg-surface-container-highest rounded-3xl p-12 flex flex-col justify-between relative overflow-hidden group">
+<div class="z-10">
+<span class="material-symbols-outlined text-4xl text-on-surface mb-6">smartphone</span>
+<h3 class="text-3xl font-bold mb-4">Mobile Experience</h3>
+<p class="text-on-surface-variant leading-relaxed">
+                            Native-first performance for iOS and Android with seamless shared logic.
+                        </p>
+</div>
+</div>
+<!-- Cloud Infrastructure -->
+<div class="md:col-span-7 bg-surface-container-low rounded-3xl p-12 flex flex-col justify-between overflow-hidden group">
+<div class="flex justify-between items-start">
+<div>
+<span class="material-symbols-outlined text-4xl text-primary mb-6">cloud_done</span>
+<h3 class="text-3xl font-bold mb-4">Cloud Infrastructure</h3>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors cursor-pointer">arrow_outward</span>
+</div>
+<p class="text-on-surface-variant max-w-lg leading-relaxed">
+                        Automated CI/CD pipelines and Kubernetes orchestration for zero-downtime deployment environments across global regions.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Stats Section (Tonal Shift) -->
+<section class="bg-surface-container-low py-32 px-8">
+<div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
+<div>
+<p class="text-6xl font-extrabold tracking-tighter text-primary mb-2">150+</p>
+<p class="text-sm font-label uppercase tracking-widest text-on-surface-variant">Launch Cycles</p>
+</div>
+<div>
+<p class="text-6xl font-extrabold tracking-tighter text-primary mb-2">12M</p>
+<p class="text-sm font-label uppercase tracking-widest text-on-surface-variant">Daily Users</p>
+</div>
+<div>
+<p class="text-6xl font-extrabold tracking-tighter text-primary mb-2">48h</p>
+<p class="text-sm font-label uppercase tracking-widest text-on-surface-variant">Mean Recovery</p>
+</div>
+<div>
+<p class="text-6xl font-extrabold tracking-tighter text-primary mb-2">0</p>
+<p class="text-sm font-label uppercase tracking-widest text-on-surface-variant">Critical Vulnerabilities</p>
+</div>
+</div>
+</section>
+<!-- Feature Grid (Apple Style Detail) -->
+<section class="py-32 px-8 max-w-7xl mx-auto">
+<h2 class="text-4xl md:text-6xl font-bold tracking-tight text-center mb-24">Precision in every pixel.</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-16">
+<div class="flex flex-col items-center text-center">
+<div class="w-16 h-16 bg-surface-container-low rounded-2xl flex items-center justify-center mb-8">
+<span class="material-symbols-outlined text-primary text-3xl">verified</span>
+</div>
+<h4 class="text-xl font-bold mb-4">ISO-Grade Security</h4>
+<p class="text-on-surface-variant leading-relaxed">Encrypted end-to-end data processing with sovereign cloud compliance protocols.</p>
+</div>
+<div class="flex flex-col items-center text-center">
+<div class="w-16 h-16 bg-surface-container-low rounded-2xl flex items-center justify-center mb-8">
+<span class="material-symbols-outlined text-primary text-3xl">bolt</span>
+</div>
+<h4 class="text-xl font-bold mb-4">Edge Optimization</h4>
+<p class="text-on-surface-variant leading-relaxed">Content served from the edge to ensure the lowest possible latency for global teams.</p>
+</div>
+<div class="flex flex-col items-center text-center">
+<div class="w-16 h-16 bg-surface-container-low rounded-2xl flex items-center justify-center mb-8">
+<span class="material-symbols-outlined text-primary text-3xl">hub</span>
+</div>
+<h4 class="text-xl font-bold mb-4">Modular Core</h4>
+<p class="text-on-surface-variant leading-relaxed">Our proprietary forge architecture allows for rapid scaling and decoupled service updates.</p>
+</div>
+</div>
+</section>
+<!-- Contact Section / Let's Build The Future -->
+<section class="py-32 px-8 max-w-7xl mx-auto bg-surface-container-lowest rounded-[3rem] shadow-sm mb-32 border border-outline-variant/5">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-20">
+<div>
+<h2 class="text-5xl font-bold tracking-tight mb-8">Let's build <br/>the future.</h2>
+<p class="text-xl text-on-surface-variant mb-12 max-w-md">Our studios are located in the world's most vibrant tech hubs, ready to forge your vision into reality.</p>
+<div class="space-y-10">
+<div>
+<h5 class="text-sm font-label uppercase tracking-widest text-primary mb-4">London Studio</h5>
+<p class="text-lg font-medium">Kings Cross Tech Quarter</p>
+<p class="text-on-surface-variant">N1C 4AB, London, UK</p>
+</div>
+<div>
+<h5 class="text-sm font-label uppercase tracking-widest text-primary mb-4">San Francisco Studio</h5>
+<p class="text-lg font-medium">SoMa Innovation District</p>
+<p class="text-on-surface-variant">CA 94103, USA</p>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-low p-10 rounded-3xl">
+<form class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div>
+<label class="block text-sm font-medium mb-2 ml-1">Name</label>
+<input class="w-full px-5 py-4 bg-surface-container-lowest rounded-xl border-none focus:ring-2 focus:ring-primary/20 transition-all" placeholder="John Doe" type="text"/>
+</div>
+<div>
+<label class="block text-sm font-medium mb-2 ml-1">Email</label>
+<input class="w-full px-5 py-4 bg-surface-container-lowest rounded-xl border-none focus:ring-2 focus:ring-primary/20 transition-all" placeholder="john@nexusforge.tech" type="email"/>
+</div>
+</div>
+<div>
+<label class="block text-sm font-medium mb-2 ml-1">Project Intent</label>
+<select class="w-full px-5 py-4 bg-surface-container-lowest rounded-xl border-none focus:ring-2 focus:ring-primary/20 transition-all">
+<option>Select a service...</option>
+<option>Web Ecosystem</option>
+<option>AI Forge</option>
+<option>Mobile Experience</option>
+</select>
+</div>
+<div>
+<label class="block text-sm font-medium mb-2 ml-1">Message</label>
+<textarea class="w-full px-5 py-4 bg-surface-container-lowest rounded-xl border-none focus:ring-2 focus:ring-primary/20 transition-all" placeholder="Tell us about your vision..." rows="4"></textarea>
+</div>
+<button class="w-full py-5 hero-gradient text-white font-bold rounded-xl shadow-lg shadow-primary/20 hover:scale-[1.01] transition-transform" type="submit">
+                            Send Proposal
+                        </button>
+</form>
+</div>
+</div>
+</section>
+<!-- Final CTA Section -->
+<section class="py-32 px-8 text-center max-w-4xl mx-auto">
+<h2 class="text-6xl md:text-7xl font-extrabold tracking-tighter mb-8">Ready to forge?</h2>
+<p class="text-xl text-on-surface-variant mb-12">The exhibition is waiting. Join the select few who are defining the digital landscape with NovaTech.</p>
+<button class="px-12 py-6 bg-on-surface text-surface rounded-full text-lg font-bold hover:bg-primary transition-colors">
+                Contact Strategy Team
+            </button>
+</section>
+</main>
+<!-- Footer Shell -->
+<footer class="w-full border-t border-slate-200/10 bg-slate-50">
+<div class="flex flex-col md:flex-row justify-between items-center px-8 py-12 max-w-7xl mx-auto gap-6">
+<div class="flex flex-col gap-2">
+<span class="text-lg font-bold tracking-tighter text-slate-900">NovaTech</span>
+<p class="text-sm font-['Inter'] leading-relaxed text-slate-500">© 2024 NovaTech Systems. All rights reserved.</p>
+</div>
+<div class="flex gap-8">
+<a class="text-sm font-['Inter'] text-slate-500 hover:text-slate-900 transition-colors" href="#">Privacy Policy</a>
+<a class="text-sm font-['Inter'] text-slate-500 hover:text-slate-900 transition-colors" href="#">Terms of Service</a>
+<a class="text-sm font-['Inter'] text-slate-500 hover:text-slate-900 transition-colors" href="#">Cookies</a>
+<a class="text-sm font-['Inter'] text-slate-500 hover:text-slate-900 transition-colors" href="#">Security</a>
+</div>
+<div class="flex gap-6">
+<a class="text-slate-500 hover:text-blue-600 transition-colors" href="#"><span class="material-symbols-outlined">share</span></a>
+<a class="text-slate-500 hover:text-blue-600 transition-colors" href="#"><span class="material-symbols-outlined">public</span></a>
+</div>
+</div>
+</footer>
+</body></html>
