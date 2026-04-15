@@ -5,7 +5,9 @@ const Footer: React.FC = () => {
     <footer className="w-full border-t border-slate-200/10 bg-slate-50">
       <div className="flex flex-col md:flex-row justify-between items-center px-8 py-12 max-w-7xl mx-auto gap-6">
         <div className="flex flex-col gap-2">
-          <span className="text-lg font-bold tracking-tighter text-slate-900">CatomDeveloper</span>
+          <span className="text-lg font-bold tracking-tighter text-slate-900">
+            Catom<span className="text-primary">Developer</span>
+          </span>
           <p className="text-sm font-body leading-relaxed text-slate-500">
             © {new Date().getFullYear()} CatomDeveloper Systems. All rights reserved.
           </p>
