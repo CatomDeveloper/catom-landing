@@ -1,4 +1,5 @@
 import React from 'react';
+import AnimatedButton from './AnimatedButton';
 
 const features = [
   {
@@ -11,6 +12,7 @@ const features = [
     title: 'ISO-Grade Security',
     description: 'Encrypted end-to-end data processing with sovereign cloud compliance protocols. Zero critical vulnerabilities across all deployments.',
     accent: '#f0c040',
+    btnVariant: 'gold' as const,
   },
   {
     index: '02',
@@ -22,6 +24,7 @@ const features = [
     title: 'Edge Optimization',
     description: 'Content served from the edge for lowest possible latency. Global CDN with intelligent caching for distributed teams worldwide.',
     accent: '#5b8def',
+    btnVariant: 'outline' as const,
   },
   {
     index: '03',
@@ -34,6 +37,7 @@ const features = [
     title: 'Modular Core',
     description: 'Our proprietary forge architecture enables rapid scaling and decoupled service updates. Build once, deploy everywhere.',
     accent: '#ff4d00',
+    btnVariant: 'outline' as const,
   },
 ];
 
@@ -60,7 +64,7 @@ const Features: React.FC = () => {
 
         {/* Feature cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          {features.map((f, i) => (
+          {features.map((f) => (
             <div
               key={f.index}
               className="group relative rounded-3xl p-8 cursor-default overflow-hidden"
@@ -78,17 +82,17 @@ const Features: React.FC = () => {
                 (e.currentTarget as HTMLElement).style.transform = 'translateY(0)';
               }}
             >
-              {/* Background glow on hover */}
+              {/* Subtle background tint on hover */}
               <div
                 className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
                 style={{ background: `radial-gradient(ellipse at 30% 20%, ${f.accent}10 0%, transparent 60%)` }}
               />
 
-              {/* Index */}
+              {/* Index + icon */}
               <div className="flex items-start justify-between mb-8">
                 <span className="index-num text-base">{f.index}</span>
                 <div
-                  className="w-10 h-10 rounded-2xl flex items-center justify-center transition-colors duration-300"
+                  className="w-10 h-10 rounded-2xl flex items-center justify-center"
                   style={{ background: `${f.accent}15`, color: f.accent }}
                 >
                   {f.icon}
@@ -97,33 +101,30 @@ const Features: React.FC = () => {
 
               {/* Title */}
               <h3
-                className="text-2xl font-bold text-ink mb-4 transition-colors duration-300 group-hover:text-white"
+                className="text-2xl font-bold text-ink mb-4"
                 style={{ fontFamily: "'Space Grotesk', sans-serif" }}
               >
                 {f.title}
               </h3>
 
-              {/* Description */}
-              <p className="text-ink-3 text-sm leading-relaxed">
+              <p className="text-ink-3 text-sm leading-relaxed mb-8">
                 {f.description}
               </p>
 
-              {/* Bottom arrow */}
-              <div className="mt-8 flex items-center gap-2">
-                <span
-                  className="text-xs font-semibold tracking-widest uppercase transition-colors duration-300"
-                  style={{ color: f.accent }}
-                >
-                  Learn More
-                </span>
-                <svg
-                  width="12" height="12" viewBox="0 0 12 12" fill="none"
-                  className="transition-transform duration-300 group-hover:translate-x-1"
-                  style={{ color: f.accent }}
-                >
-                  <path d="M2.5 9.5L9.5 2.5M9.5 2.5H4M9.5 2.5V8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </div>
+              {/* Osmo animated button */}
+              <AnimatedButton
+                id={`feature-learn-${f.index}`}
+                href="#contact"
+                variant={f.btnVariant}
+                className="text-xs tracking-widest uppercase"
+                icon={
+                  <svg width="11" height="11" viewBox="0 0 12 12" fill="none">
+                    <path d="M2.5 9.5L9.5 2.5M9.5 2.5H4M9.5 2.5V8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                }
+              >
+                Learn More
+              </AnimatedButton>
             </div>
           ))}
         </div>

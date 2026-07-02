@@ -1,4 +1,11 @@
 import React from 'react';
+import AnimatedButton from './AnimatedButton';
+
+const ArrowIcon = () => (
+  <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+    <path d="M2 12L12 2M12 2H5M12 2V9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+  </svg>
+);
 
 const CTA: React.FC = () => {
   return (
@@ -21,23 +28,9 @@ const CTA: React.FC = () => {
               (e.currentTarget as HTMLElement).style.transform = 'translateY(0)';
             }}
           >
-            {/* Background glow */}
-            <div
-              className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-              style={{ background: 'radial-gradient(ellipse at 20% 50%, rgba(240,192,64,0.08) 0%, transparent 65%)' }}
-            />
-
             <div className="relative z-10">
               <div className="flex items-start justify-between mb-8">
                 <span className="badge-gold">→ Start Project</span>
-                <div
-                  className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center group-hover:border-gold/50 group-hover:bg-gold/10 transition-all duration-300"
-                  style={{ transition: 'all 0.3s ease' }}
-                >
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="group-hover:rotate-45 transition-transform duration-300">
-                    <path d="M3 13L13 3M13 3H6M13 3V10" stroke="#f0ede8" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </div>
               </div>
 
               <h2
@@ -46,21 +39,19 @@ const CTA: React.FC = () => {
               >
                 Ready to<br />forge something?
               </h2>
-              <p className="text-ink-3 text-sm leading-relaxed max-w-sm">
+              <p className="text-ink-3 text-sm leading-relaxed max-w-sm mb-10">
                 Join the select few defining the digital landscape with CatomDeveloper. Let's turn your vision into reality.
               </p>
 
-              <div className="mt-10">
-                <a
-                  href="#contact"
-                  className="inline-flex items-center gap-3 px-8 py-4 rounded-full font-bold text-void bg-gold hover:bg-gold-2 transition-colors duration-200 text-sm"
-                >
-                  Contact Strategy Team
-                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                    <path d="M2 12L12 2M12 2H5M12 2V9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </a>
-              </div>
+              <AnimatedButton
+                id="cta-contact-team"
+                href="#contact"
+                variant="gold"
+                className="text-sm"
+                icon={<ArrowIcon />}
+              >
+                Contact Strategy Team
+              </AnimatedButton>
             </div>
           </div>
 
@@ -77,22 +68,9 @@ const CTA: React.FC = () => {
               (e.currentTarget as HTMLElement).style.transform = 'translateY(0)';
             }}
           >
-            {/* Background glow */}
-            <div
-              className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-              style={{ background: 'radial-gradient(ellipse at 80% 50%, rgba(91,141,239,0.08) 0%, transparent 65%)' }}
-            />
-
             <div className="relative z-10">
               <div className="flex items-start justify-between mb-8">
                 <span className="badge-dark">⬟ Join the Team</span>
-                <div
-                  className="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center group-hover:border-ice/50 group-hover:bg-ice/10 transition-all duration-300"
-                >
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="group-hover:rotate-45 transition-transform duration-300">
-                    <path d="M3 13L13 3M13 3H6M13 3V10" stroke="#f0ede8" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </div>
               </div>
 
               <h2
@@ -101,21 +79,19 @@ const CTA: React.FC = () => {
               >
                 We're always<br />seeking talent.
               </h2>
-              <p className="text-ink-3 text-sm leading-relaxed max-w-sm">
+              <p className="text-ink-3 text-sm leading-relaxed max-w-sm mb-10">
                 Engineers, designers, strategists — if you're exceptional at what you do, we want to hear from you.
               </p>
 
-              <div className="mt-10">
-                <a
-                  href="mailto:careers@catom.dev"
-                  className="inline-flex items-center gap-3 px-8 py-4 rounded-full font-bold text-ink border border-white/15 hover:border-ice/50 hover:text-ice transition-all duration-200 text-sm"
-                >
-                  View Open Roles
-                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                    <path d="M2 12L12 2M12 2H5M12 2V9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </a>
-              </div>
+              <AnimatedButton
+                id="cta-view-roles"
+                href="mailto:careers@catom.dev"
+                variant="outline"
+                className="text-sm"
+                icon={<ArrowIcon />}
+              >
+                View Open Roles
+              </AnimatedButton>
             </div>
           </div>
 

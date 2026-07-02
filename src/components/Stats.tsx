@@ -1,4 +1,5 @@
 import React, { useRef, useEffect } from 'react';
+import AnimatedButton from './AnimatedButton';
 
 const stats = [
   { value: '150+', label: 'Launch Cycles', sub: 'Projects shipped globally' },
@@ -68,9 +69,22 @@ const Stats: React.FC = () => {
         ))}
       </div>
 
-      {/* Decorative line */}
-      <div className="section-wrap mt-14">
-        <hr className="divider" />
+      {/* Bottom CTA row */}
+      <div className="section-wrap mt-14 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+        <hr className="divider flex-1" />
+        <AnimatedButton
+          id="stats-explore-platform"
+          href="#solutions"
+          variant="outline"
+          className="text-xs tracking-widest uppercase whitespace-nowrap"
+          icon={
+            <svg width="11" height="11" viewBox="0 0 12 12" fill="none">
+              <path d="M2.5 9.5L9.5 2.5M9.5 2.5H4M9.5 2.5V8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          }
+        >
+          Explore Platform
+        </AnimatedButton>
       </div>
     </section>
   );

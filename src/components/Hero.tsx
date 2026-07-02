@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import AnimatedButton from './AnimatedButton';
 
 const Hero: React.FC = () => {
   const imgRef = useRef<HTMLDivElement>(null);
@@ -48,7 +49,6 @@ const Hero: React.FC = () => {
 
         {/* Left: Main featured card */}
         <div className="lg:col-span-8 relative rounded-4xl overflow-hidden min-h-[520px] lg:min-h-[620px] group">
-          {/* Image */}
           <div ref={imgRef} className="absolute inset-0 transition-transform duration-300 ease-out will-change-transform">
             <img
               src="/hero_featured.png"
@@ -56,19 +56,14 @@ const Hero: React.FC = () => {
               className="w-full h-full object-cover"
             />
           </div>
-
-          {/* Gradient overlay */}
           <div className="absolute inset-0 hero-overlay" />
 
-          {/* Gold badge */}
           <div className="absolute top-6 left-6 flex items-center gap-3">
             <span className="badge-gold">⬟ Featured Project</span>
             <span className="badge-dark">Catom 2026</span>
           </div>
 
-          {/* Bottom content */}
           <div className="absolute bottom-0 left-0 right-0 p-8">
-            {/* Score pills */}
             <div className="flex items-center gap-6 mb-6">
               {scores.map((s) => (
                 <div key={s.label} className="score-pill">
@@ -109,10 +104,7 @@ const Hero: React.FC = () => {
             <div className="flex items-start justify-between">
               <div>
                 <div className="micro-label mb-2">Developer</div>
-                <div
-                  className="text-2xl font-bold text-ink"
-                  style={{ fontFamily: "'Space Grotesk', sans-serif" }}
-                >
+                <div className="text-2xl font-bold text-ink" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                   CatomDeveloper
                 </div>
                 <div className="text-ink-3 text-xs mt-1 tracking-wide">Cuddalore, Tamil Nadu · India</div>
@@ -139,17 +131,14 @@ const Hero: React.FC = () => {
             </div>
           </div>
 
-          {/* Services quick tags */}
-          <div
-            className="rounded-4xl p-6 flex-1"
-            style={{ background: '#111', border: '1px solid #2a2a2a' }}
-          >
+          {/* Services quick tags + CTAs */}
+          <div className="rounded-4xl p-6 flex-1" style={{ background: '#111', border: '1px solid #2a2a2a' }}>
             <div className="micro-label mb-4">Core Services</div>
             <div className="flex flex-wrap gap-2">
               {['Web Ecosystems', 'AI Integration', 'Mobile Apps', 'Cloud Infra', 'Strategic Consulting', 'Edge Optimization'].map((tag) => (
                 <span
                   key={tag}
-                  className="px-3 py-1.5 rounded-full text-xs font-medium text-ink-2 hover:text-ink hover:border-white/20 transition-all cursor-default"
+                  className="px-3 py-1.5 rounded-full text-xs font-medium text-ink-2 hover:text-ink transition-all cursor-default"
                   style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)' }}
                 >
                   {tag}
@@ -159,20 +148,24 @@ const Hero: React.FC = () => {
 
             <hr className="divider my-5" />
 
-            {/* CTA row */}
+            {/* Osmo-animated CTA buttons */}
             <div className="flex gap-3">
-              <a
+              <AnimatedButton
+                id="hero-view-work"
                 href="#work"
-                className="flex-1 py-3 rounded-full text-xs font-bold tracking-widest uppercase text-center text-void bg-gold hover:bg-gold-2 transition-colors duration-200"
+                variant="gold"
+                className="flex-1 text-xs tracking-widest uppercase justify-center"
               >
                 View Work
-              </a>
-              <a
+              </AnimatedButton>
+              <AnimatedButton
+                id="hero-start-project"
                 href="#contact"
-                className="flex-1 py-3 rounded-full text-xs font-bold tracking-widest uppercase text-center text-ink border border-white/10 hover:border-white/25 transition-colors duration-200"
+                variant="outline"
+                className="flex-1 text-xs tracking-widest uppercase justify-center"
               >
                 Start Project
-              </a>
+              </AnimatedButton>
             </div>
           </div>
 

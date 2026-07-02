@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import AnimatedButton from './AnimatedButton';
 
 const Contact: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,7 +28,6 @@ const Contact: React.FC = () => {
     <section id="contact" className="py-24 bg-void">
       <div className="section-wrap">
 
-        {/* Section header */}
         <div className="micro-label mb-14">Get in Touch</div>
 
         <div
@@ -48,7 +48,6 @@ const Contact: React.FC = () => {
                 Our studio is located in the vibrant coastal hub of South India, ready to forge your vision into reality.
               </p>
 
-              {/* Info items */}
               <div className="space-y-10">
                 <div>
                   <div className="micro-label mb-3">Headquarters</div>
@@ -106,13 +105,11 @@ const Contact: React.FC = () => {
                   <div>
                     <label className="block text-xs font-semibold text-ink-3 mb-2 tracking-wider uppercase">Name</label>
                     <input
+                      id="contact-name"
                       type="text"
                       placeholder="John Doe"
                       className="w-full px-4 py-3.5 rounded-2xl text-sm text-ink placeholder-ink-3 outline-none transition-all duration-200"
-                      style={{
-                        background: '#161616',
-                        border: '1px solid #2a2a2a',
-                      }}
+                      style={{ background: '#161616', border: '1px solid #2a2a2a' }}
                       onFocus={(e) => (e.target as HTMLElement).style.borderColor = '#f0c040'}
                       onBlur={(e) => (e.target as HTMLElement).style.borderColor = '#2a2a2a'}
                     />
@@ -120,13 +117,11 @@ const Contact: React.FC = () => {
                   <div>
                     <label className="block text-xs font-semibold text-ink-3 mb-2 tracking-wider uppercase">Email</label>
                     <input
+                      id="contact-email"
                       type="email"
                       placeholder="hello@catom.dev"
                       className="w-full px-4 py-3.5 rounded-2xl text-sm text-ink placeholder-ink-3 outline-none transition-all duration-200"
-                      style={{
-                        background: '#161616',
-                        border: '1px solid #2a2a2a',
-                      }}
+                      style={{ background: '#161616', border: '1px solid #2a2a2a' }}
                       onFocus={(e) => (e.target as HTMLElement).style.borderColor = '#f0c040'}
                       onBlur={(e) => (e.target as HTMLElement).style.borderColor = '#2a2a2a'}
                     />
@@ -138,6 +133,7 @@ const Contact: React.FC = () => {
                   <label className="block text-xs font-semibold text-ink-3 mb-2 tracking-wider uppercase">Project Intent</label>
                   <div className="relative">
                     <button
+                      id="contact-service-dropdown"
                       type="button"
                       onClick={() => setIsOpen(!isOpen)}
                       className="w-full px-4 py-3.5 rounded-2xl text-sm text-left flex justify-between items-center transition-all duration-200 outline-none"
@@ -150,8 +146,7 @@ const Contact: React.FC = () => {
                       {selectedService}
                       <svg
                         width="14" height="14" viewBox="0 0 14 14" fill="none"
-                        className="transition-transform duration-300"
-                        style={{ transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)', color: '#6e6b66' }}
+                        style={{ transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.3s', color: '#6e6b66' }}
                       >
                         <path d="M3 5l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                       </svg>
@@ -190,25 +185,25 @@ const Contact: React.FC = () => {
                 <div>
                   <label className="block text-xs font-semibold text-ink-3 mb-2 tracking-wider uppercase">Message</label>
                   <textarea
+                    id="contact-message"
                     rows={4}
                     placeholder="Tell us about your vision..."
                     className="w-full px-4 py-3.5 rounded-2xl text-sm text-ink placeholder-ink-3 outline-none transition-all duration-200 resize-none"
-                    style={{
-                      background: '#161616',
-                      border: '1px solid #2a2a2a',
-                    }}
+                    style={{ background: '#161616', border: '1px solid #2a2a2a' }}
                     onFocus={(e) => (e.target as HTMLElement).style.borderColor = '#f0c040'}
                     onBlur={(e) => (e.target as HTMLElement).style.borderColor = '#2a2a2a'}
                   />
                 </div>
 
-                {/* Submit */}
-                <button
+                {/* Submit — Osmo animated (full-width) */}
+                <AnimatedButton
+                  id="contact-submit"
                   type="submit"
-                  className="w-full py-4 rounded-2xl font-bold text-void bg-gold hover:bg-gold-2 transition-colors duration-200 text-sm tracking-wide"
+                  variant="gold"
+                  className="w-full justify-center text-sm tracking-wide"
                 >
                   Send Proposal →
-                </button>
+                </AnimatedButton>
               </form>
             </div>
 

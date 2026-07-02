@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import AnimatedButton from './AnimatedButton';
 
 const Navbar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -38,7 +39,7 @@ const Navbar: React.FC = () => {
           {/* Logo */}
           <a href="#" className="flex items-center gap-2 group">
             <span
-              className="text-base font-display font-bold tracking-tight text-ink group-hover:text-gold transition-colors duration-300"
+              className="text-base font-bold tracking-tight text-ink group-hover:text-gold transition-colors duration-300"
               style={{ fontFamily: "'Space Grotesk', sans-serif" }}
             >
               Catom<span className="text-gold">Developer</span>
@@ -58,16 +59,20 @@ const Navbar: React.FC = () => {
             ))}
           </div>
 
-          {/* Right CTA */}
-          <a
+          {/* Right CTA — Osmo animated */}
+          <AnimatedButton
+            id="nav-cta"
             href="#contact"
-            className="hidden md:inline-flex items-center gap-2 px-5 py-2 rounded-full border border-white/10 text-xs font-semibold tracking-widest uppercase text-ink-2 hover:border-gold/50 hover:text-gold transition-all duration-300"
+            variant="outline"
+            className="hidden md:inline-flex text-xs tracking-widest uppercase"
+            icon={
+              <svg width="11" height="11" viewBox="0 0 12 12" fill="none">
+                <path d="M2.5 9.5L9.5 2.5M9.5 2.5H4M9.5 2.5V8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            }
           >
             Start Project
-            <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-              <path d="M2.5 9.5L9.5 2.5M9.5 2.5H4M9.5 2.5V8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-          </a>
+          </AnimatedButton>
         </div>
       </nav>
 
@@ -83,12 +88,15 @@ const Navbar: React.FC = () => {
           </a>
         ))}
         <div className="w-px h-4 bg-white/10 mx-1" />
-        <a
+        {/* Dock CTA — Osmo animated (smaller sizing) */}
+        <AnimatedButton
+          id="dock-cta"
           href="#contact"
-          className="px-5 py-2 rounded-full bg-gold text-void text-[11px] font-bold tracking-wider uppercase hover:bg-gold-2 transition-colors duration-200 whitespace-nowrap"
+          variant="gold"
+          className="text-[11px] tracking-wider uppercase px-5 py-2"
         >
           Get Started →
-        </a>
+        </AnimatedButton>
       </div>
     </>
   );

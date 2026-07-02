@@ -1,4 +1,5 @@
 import React from 'react';
+import AnimatedButton from './AnimatedButton';
 
 const projects = [
   {
@@ -69,12 +70,19 @@ const Expertise: React.FC = () => {
             <p className="text-ink-3 text-sm max-w-xs md:ml-auto leading-relaxed">
               Three core pillars driving modern digital transformation — every touchpoint a masterpiece of engineering.
             </p>
-            <a href="#contact" className="inline-flex items-center gap-2 mt-4 text-xs font-semibold tracking-widest uppercase text-gold hover:text-gold-2 transition-colors">
+            <AnimatedButton
+              id="expertise-view-all"
+              href="#contact"
+              variant="outline"
+              className="text-xs tracking-widest uppercase"
+              icon={
+                <svg width="11" height="11" viewBox="0 0 12 12" fill="none">
+                  <path d="M2 10L10 2M10 2H5M10 2V7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              }
+            >
               View All Work
-              <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-                <path d="M2 10L10 2M10 2H5M10 2V7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </a>
+            </AnimatedButton>
           </div>
         </div>
 
