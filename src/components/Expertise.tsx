@@ -1,68 +1,158 @@
 import React from 'react';
 
+const projects = [
+  {
+    id: '01',
+    title: 'Web Ecosystems',
+    category: 'Full-Stack Architecture',
+    description: 'Scalable systems handling millions of requests with millisecond responsiveness.',
+    image: '/card_web.png',
+    scores: { Design: '9.4', Usability: '9.1' },
+    tag: 'Featured',
+    tagColor: 'gold',
+  },
+  {
+    id: '02',
+    title: 'AI Integration',
+    category: 'Machine Learning · LLM',
+    description: 'Bespoke LLM deployments and predictive modeling tools built for scale.',
+    image: '/card_ai.png',
+    scores: { Design: '9.7', Creativity: '9.8' },
+    tag: 'Nominee',
+    tagColor: 'ice',
+  },
+  {
+    id: '03',
+    title: 'Mobile Experience',
+    category: 'iOS · Android · Cross-Platform',
+    description: 'Native-first performance with seamless shared logic across platforms.',
+    image: '/card_mobile.png',
+    scores: { Usability: '9.5', Content: '9.2' },
+    tag: 'SOTD',
+    tagColor: 'ember',
+  },
+  {
+    id: '04',
+    title: 'Cloud Infrastructure',
+    category: 'DevOps · Kubernetes · CI/CD',
+    description: 'Zero-downtime deployments across global regions with full observability.',
+    image: '/card_cloud.png',
+    scores: { Design: '9.3', Usability: '9.6' },
+    tag: 'Nominee',
+    tagColor: 'ice',
+  },
+];
+
+const tagStyles: Record<string, string> = {
+  gold:  'bg-gold text-void',
+  ice:   'bg-ice/20 text-ice border border-ice/30',
+  ember: 'bg-ember/20 text-ember border border-ember/30',
+};
+
 const Expertise: React.FC = () => {
   return (
-    <section className="py-32 px-8 max-w-7xl mx-auto">
-      <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
-        <div className="max-w-2xl">
-          <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-6">Expertise carved from <br />experience.</h2>
-          <p className="text-lg text-on-surface-variant">We specialize in three core pillars that drive modern digital transformation, ensuring every touchpoint is a masterpiece of engineering.</p>
-        </div>
-        <div className="pb-2">
-          <span className="text-sm font-label uppercase tracking-widest opacity-50">Our Capabilities</span>
-        </div>
-      </div>
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-6 h-full md:h-[600px]">
-        {/* Web Systems */}
-        <div className="md:col-span-8 bg-surface-container-low rounded-3xl p-12 flex flex-col justify-between overflow-hidden relative group">
-          <div className="z-10">
-            <span className="material-symbols-outlined text-4xl text-primary mb-6">public</span>
-            <h3 className="text-3xl font-bold mb-4">Web Ecosystems</h3>
-            <p className="text-on-surface-variant max-w-md leading-relaxed">
-              Developing scalable architectures that handle millions of requests while maintaining millisecond-level responsiveness.
+    <section id="work" className="py-24 bg-void">
+      <div className="section-wrap">
+
+        {/* Section header */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
+          <div>
+            <div className="micro-label mb-4">Our Craft</div>
+            <h2
+              className="display-headline text-5xl md:text-6xl text-ink"
+              style={{ fontFamily: "'Space Grotesk', sans-serif" }}
+            >
+              Expertise carved<br />from experience.
+            </h2>
+          </div>
+          <div className="md:text-right">
+            <p className="text-ink-3 text-sm max-w-xs md:ml-auto leading-relaxed">
+              Three core pillars driving modern digital transformation — every touchpoint a masterpiece of engineering.
             </p>
-          </div>
-          <img 
-            alt="Web Systems" 
-            className="absolute -right-20 -bottom-20 w-1/2 opacity-20 grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" 
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEBhtbkipulVQoFSzjXr_izp4WZEHrEzYbhp8q4tvXjzSvV6iSauc32U70XtTcueaPlEMfd_mW-IIDSQjC_10Q_x6PwNoDrh-JSOlV1fIsGWo-9Q5YOfWrF-kNBPkkNTf7V4K-tCdEt46SLHRquW5_DpU2mHrMNSAL2kyIV22lrI2BN4hGkAZaOUEQdEcKYtafLkxDQfhdq3zYHVuUF583EPQV-rn4nZU_pocvs2ot0NcqwfmGQTXP5gNHi8XhJRMbZtUWyQ3jAw" 
-          />
-        </div>
-        {/* AI Forge */}
-        <div className="md:col-span-4 bg-primary text-white rounded-3xl p-12 flex flex-col justify-between relative overflow-hidden group">
-          <div className="z-10">
-            <span className="material-symbols-outlined text-4xl mb-6">auto_awesome</span>
-            <h3 className="text-3xl font-bold mb-4">AI Integration</h3>
-            <p className="text-blue-100 leading-relaxed">
-              Bespoke LLM deployments and predictive modeling tools.
-            </p>
-          </div>
-          <div className="absolute bottom-0 right-0 p-8 opacity-40">
-            <span className="material-symbols-outlined text-9xl">memory</span>
+            <a href="#contact" className="inline-flex items-center gap-2 mt-4 text-xs font-semibold tracking-widest uppercase text-gold hover:text-gold-2 transition-colors">
+              View All Work
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                <path d="M2 10L10 2M10 2H5M10 2V7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </a>
           </div>
         </div>
-        {/* Mobile First */}
-        <div className="md:col-span-5 bg-surface-container-highest rounded-3xl p-12 flex flex-col justify-between relative overflow-hidden group">
-          <div className="z-10">
-            <span className="material-symbols-outlined text-4xl text-on-surface mb-6">smartphone</span>
-            <h3 className="text-3xl font-bold mb-4">Mobile Experience</h3>
-            <p className="text-on-surface-variant leading-relaxed">
-              Native-first performance for iOS and Android with seamless shared logic.
-            </p>
-          </div>
-        </div>
-        {/* Cloud Infrastructure */}
-        <div className="md:col-span-7 bg-surface-container-low rounded-3xl p-12 flex flex-col justify-between overflow-hidden group">
-          <div className="flex justify-between items-start">
-            <div>
-              <span className="material-symbols-outlined text-4xl text-primary mb-6">cloud_done</span>
-              <h3 className="text-3xl font-bold mb-4">Cloud Infrastructure</h3>
+
+        {/* Cards grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {projects.map((project) => (
+            <div
+              key={project.id}
+              className="group relative rounded-3xl overflow-hidden cursor-pointer"
+              style={{ background: '#111', border: '1px solid #2a2a2a', transition: 'border-color 0.3s ease, transform 0.4s cubic-bezier(0.16,1,0.3,1)' }}
+              onMouseEnter={(e) => {
+                (e.currentTarget as HTMLElement).style.borderColor = '#383838';
+                (e.currentTarget as HTMLElement).style.transform = 'translateY(-6px)';
+              }}
+              onMouseLeave={(e) => {
+                (e.currentTarget as HTMLElement).style.borderColor = '#2a2a2a';
+                (e.currentTarget as HTMLElement).style.transform = 'translateY(0)';
+              }}
+            >
+              {/* Image */}
+              <div className="card-img-wrap h-52 overflow-hidden">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-full object-cover transition-transform duration-700"
+                  style={{ transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)' }}
+                />
+                {/* Image overlay on hover */}
+                <div
+                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  style={{ background: 'rgba(8,8,8,0.3)' }}
+                />
+              </div>
+
+              {/* Tag */}
+              <div className="absolute top-4 left-4">
+                <span className={`text-[10px] font-bold tracking-wider uppercase px-2.5 py-1 rounded-full ${tagStyles[project.tagColor]}`}>
+                  {project.tag}
+                </span>
+              </div>
+
+              {/* Arrow (top right) */}
+              <div className="absolute top-4 right-4 w-8 h-8 rounded-full border border-white/10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 bg-void/60 backdrop-blur-sm">
+                <svg width="10" height="10" viewBox="0 0 12 12" fill="none">
+                  <path d="M2 10L10 2M10 2H5M10 2V7" stroke="#f0ede8" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </div>
+
+              {/* Content */}
+              <div className="p-5">
+                <div className="flex items-center justify-between mb-2">
+                  <span className="index-num">{project.id}</span>
+                  {/* Scores */}
+                  <div className="flex items-center gap-3">
+                    {Object.entries(project.scores).map(([label, val]) => (
+                      <div key={label} className="score-pill">
+                        <span className="score-value text-sm">{val}</span>
+                        <span className="score-label">{label}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <h3
+                  className="text-lg font-bold text-ink mb-1 group-hover:text-gold transition-colors duration-300"
+                  style={{ fontFamily: "'Space Grotesk', sans-serif" }}
+                >
+                  {project.title}
+                </h3>
+
+                <div className="micro-label mb-3">{project.category}</div>
+
+                <p className="text-ink-3 text-xs leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-300 max-h-0 group-hover:max-h-20 overflow-hidden" style={{ transition: 'opacity 0.3s ease, max-height 0.4s ease' }}>
+                  {project.description}
+                </p>
+              </div>
             </div>
-            <span className="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors cursor-pointer">arrow_outward</span>
-          </div>
-          <p className="text-on-surface-variant max-w-lg leading-relaxed">
-            Automated CI/CD pipelines and Kubernetes orchestration for zero-downtime deployment environments across global regions.
-          </p>
+          ))}
         </div>
       </div>
     </section>

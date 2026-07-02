@@ -10,7 +10,7 @@ const Contact: React.FC = () => {
     'AI Integration',
     'Mobile Experience',
     'Cloud Infrastructure',
-    'Strategic Consulting'
+    'Strategic Consulting',
   ];
 
   useEffect(() => {
@@ -24,111 +24,195 @@ const Contact: React.FC = () => {
   }, []);
 
   return (
-    <section className="py-32 px-8 max-w-7xl mx-auto bg-surface-container-lowest rounded-[3rem] shadow-sm mb-32 border border-outline-variant/5">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
-        <div>
-          <h2 className="text-5xl font-bold tracking-tight mb-8">Let's build <br />the future.</h2>
-          <p className="text-xl text-on-surface-variant mb-12 max-w-md">Our studio is located in the vibrant coastal hub of South India, ready to forge your vision into reality.</p>
-          
-          <div className="space-y-16">
-            <div className="flex gap-4">
-              <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center shrink-0">
-                <span className="material-symbols-outlined text-primary">location_on</span>
-              </div>
-              <div>
-                <h5 className="text-sm font-label uppercase tracking-widest text-primary mb-2">Headquarters</h5>
-                <p className="text-lg font-medium leading-tight text-on-surface">Cuddalore</p>
-                <p className="text-on-surface-variant">Tamil Nadu, India</p>
+    <section id="contact" className="py-24 bg-void">
+      <div className="section-wrap">
+
+        {/* Section header */}
+        <div className="micro-label mb-14">Get in Touch</div>
+
+        <div
+          className="rounded-4xl overflow-hidden"
+          style={{ background: '#0d0d0d', border: '1px solid #2a2a2a' }}
+        >
+          <div className="grid grid-cols-1 lg:grid-cols-2">
+
+            {/* Left: Info */}
+            <div className="p-10 md:p-14 border-b lg:border-b-0 lg:border-r border-border-dk">
+              <h2
+                className="display-headline text-4xl md:text-5xl text-ink mb-6"
+                style={{ fontFamily: "'Space Grotesk', sans-serif" }}
+              >
+                Let's build<br />the future.
+              </h2>
+              <p className="text-ink-3 text-sm leading-relaxed mb-12 max-w-sm">
+                Our studio is located in the vibrant coastal hub of South India, ready to forge your vision into reality.
+              </p>
+
+              {/* Info items */}
+              <div className="space-y-10">
+                <div>
+                  <div className="micro-label mb-3">Headquarters</div>
+                  <p className="text-ink font-semibold" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>Cuddalore</p>
+                  <p className="text-ink-3 text-sm">Tamil Nadu, India</p>
+                </div>
+
+                <hr className="divider" />
+
+                <div>
+                  <div className="micro-label mb-4">Connect Directly</div>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                    <a
+                      href="mailto:hello@catom.dev"
+                      className="group flex flex-col gap-2 p-5 rounded-3xl transition-all duration-300"
+                      style={{ background: '#161616', border: '1px solid #2a2a2a' }}
+                      onMouseEnter={(e) => (e.currentTarget as HTMLElement).style.borderColor = '#383838'}
+                      onMouseLeave={(e) => (e.currentTarget as HTMLElement).style.borderColor = '#2a2a2a'}
+                    >
+                      <div className="w-8 h-8 rounded-xl flex items-center justify-center" style={{ background: 'rgba(240,192,64,0.12)' }}>
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                          <rect x="1" y="3" width="12" height="8" rx="1.5" stroke="#f0c040" strokeWidth="1.2"/>
+                          <path d="M1 4.5l6 4 6-4" stroke="#f0c040" strokeWidth="1.2" strokeLinecap="round"/>
+                        </svg>
+                      </div>
+                      <span className="text-sm font-semibold text-ink">Email Us</span>
+                      <span className="text-xs text-ink-3">hello@catom.dev</span>
+                    </a>
+
+                    <a
+                      href="tel:+918122334455"
+                      className="group flex flex-col gap-2 p-5 rounded-3xl transition-all duration-300"
+                      style={{ background: '#161616', border: '1px solid #2a2a2a' }}
+                      onMouseEnter={(e) => (e.currentTarget as HTMLElement).style.borderColor = '#383838'}
+                      onMouseLeave={(e) => (e.currentTarget as HTMLElement).style.borderColor = '#2a2a2a'}
+                    >
+                      <div className="w-8 h-8 rounded-xl flex items-center justify-center" style={{ background: 'rgba(91,141,239,0.12)' }}>
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                          <path d="M2 2.5C2 2.5 3 1 4 1s2 2 2 2L4.5 4.5c.5 1 1.5 2 2.5 2.5L8.5 5.5s1.5 0 2 1.5-1.5 3-1.5 3S5 11 2 8 2 2.5 2 2.5z" stroke="#5b8def" strokeWidth="1.2" strokeLinecap="round"/>
+                        </svg>
+                      </div>
+                      <span className="text-sm font-semibold text-ink">Call Us</span>
+                      <span className="text-xs text-ink-3">+91 81223 34455</span>
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
 
-            <div className="space-y-8">
-              <h5 className="text-sm font-label uppercase tracking-widest text-primary">Connect Directly</h5>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <a href="mailto:hello@catom.dev" className="group flex flex-col gap-1 p-6 rounded-3xl bg-surface-container-low hover:bg-primary/5 transition-all border border-outline-variant/10">
-                  <span className="material-symbols-outlined text-primary mb-3 group-hover:scale-110 transition-transform">mail</span>
-                  <span className="text-base font-semibold">Email Us</span>
-                  <span className="text-sm text-on-surface-variant">hello@catom.dev</span>
-                </a>
-                <a href="tel:+918122334455" className="group flex flex-col gap-1 p-6 rounded-3xl bg-surface-container-low hover:bg-primary/5 transition-all border border-outline-variant/10">
-                  <span className="material-symbols-outlined text-primary mb-3 group-hover:scale-110 transition-transform">call</span>
-                  <span className="text-base font-semibold">Call Us</span>
-                  <span className="text-sm text-on-surface-variant">+91 81223 34455</span>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="bg-surface-container-low p-10 rounded-3xl">
-          <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <label className="block text-sm font-medium mb-2 ml-1">Name</label>
-                <input 
-                  className="w-full px-5 py-4 bg-surface-container-lowest rounded-xl border-none focus:ring-2 focus:ring-primary/20 transition-all outline-none" 
-                  placeholder="John Doe" 
-                  type="text" 
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium mb-2 ml-1">Email</label>
-                <input 
-                  className="w-full px-5 py-4 bg-surface-container-lowest rounded-xl border-none focus:ring-2 focus:ring-primary/20 transition-all outline-none" 
-                  placeholder="hello@catom.dev" 
-                  type="email" 
-                />
-              </div>
-            </div>
-            <div ref={dropdownRef}>
-              <label className="block text-sm font-medium mb-2 ml-1">Project Intent</label>
-              <div className="relative">
-                <button
-                  type="button"
-                  onClick={() => setIsOpen(!isOpen)}
-                  className={`w-full px-5 py-4 bg-surface-container-lowest rounded-xl text-left transition-all flex justify-between items-center group ${isOpen ? 'ring-2 ring-primary/20' : ''}`}
-                >
-                  <span className={`${selectedService === 'Select a service...' ? 'text-on-surface-variant/50' : 'text-on-surface font-medium'}`}>
-                    {selectedService}
-                  </span>
-                  <span className={`material-symbols-outlined transition-transform duration-300 text-on-surface-variant group-hover:text-primary ${isOpen ? 'rotate-180 text-primary' : ''}`}>
-                    expand_more
-                  </span>
-                </button>
-                
-                {isOpen && (
-                  <div className="absolute top-full left-0 w-full mt-2 bg-surface-container-lowest rounded-xl shadow-2xl overflow-hidden z-[100] border border-outline-variant/10 animate-in fade-in slide-in-from-top-2 duration-200">
-                    {services.map((service) => (
-                      <button
-                        key={service}
-                        type="button"
-                        onClick={() => {
-                          setSelectedService(service);
-                          setIsOpen(false);
-                        }}
-                        className="w-full px-5 py-4 text-left hover:bg-primary/5 transition-colors text-on-surface font-medium border-b last:border-none border-outline-variant/5 hover:text-primary"
-                      >
-                        {service}
-                      </button>
-                    ))}
+            {/* Right: Form */}
+            <div className="p-10 md:p-14">
+              <div className="micro-label mb-8">Send a Proposal</div>
+              <form className="space-y-5" onSubmit={(e) => e.preventDefault()}>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                  <div>
+                    <label className="block text-xs font-semibold text-ink-3 mb-2 tracking-wider uppercase">Name</label>
+                    <input
+                      type="text"
+                      placeholder="John Doe"
+                      className="w-full px-4 py-3.5 rounded-2xl text-sm text-ink placeholder-ink-3 outline-none transition-all duration-200"
+                      style={{
+                        background: '#161616',
+                        border: '1px solid #2a2a2a',
+                      }}
+                      onFocus={(e) => (e.target as HTMLElement).style.borderColor = '#f0c040'}
+                      onBlur={(e) => (e.target as HTMLElement).style.borderColor = '#2a2a2a'}
+                    />
                   </div>
-                )}
-              </div>
+                  <div>
+                    <label className="block text-xs font-semibold text-ink-3 mb-2 tracking-wider uppercase">Email</label>
+                    <input
+                      type="email"
+                      placeholder="hello@catom.dev"
+                      className="w-full px-4 py-3.5 rounded-2xl text-sm text-ink placeholder-ink-3 outline-none transition-all duration-200"
+                      style={{
+                        background: '#161616',
+                        border: '1px solid #2a2a2a',
+                      }}
+                      onFocus={(e) => (e.target as HTMLElement).style.borderColor = '#f0c040'}
+                      onBlur={(e) => (e.target as HTMLElement).style.borderColor = '#2a2a2a'}
+                    />
+                  </div>
+                </div>
+
+                {/* Dropdown */}
+                <div ref={dropdownRef}>
+                  <label className="block text-xs font-semibold text-ink-3 mb-2 tracking-wider uppercase">Project Intent</label>
+                  <div className="relative">
+                    <button
+                      type="button"
+                      onClick={() => setIsOpen(!isOpen)}
+                      className="w-full px-4 py-3.5 rounded-2xl text-sm text-left flex justify-between items-center transition-all duration-200 outline-none"
+                      style={{
+                        background: '#161616',
+                        border: `1px solid ${isOpen ? '#f0c040' : '#2a2a2a'}`,
+                        color: selectedService === 'Select a service...' ? '#6e6b66' : '#f0ede8',
+                      }}
+                    >
+                      {selectedService}
+                      <svg
+                        width="14" height="14" viewBox="0 0 14 14" fill="none"
+                        className="transition-transform duration-300"
+                        style={{ transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)', color: '#6e6b66' }}
+                      >
+                        <path d="M3 5l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                      </svg>
+                    </button>
+
+                    {isOpen && (
+                      <div
+                        className="absolute top-full left-0 w-full mt-2 rounded-2xl overflow-hidden z-50"
+                        style={{ background: '#1c1c1c', border: '1px solid #2a2a2a', boxShadow: '0 20px 40px rgba(0,0,0,0.5)' }}
+                      >
+                        {services.map((service) => (
+                          <button
+                            key={service}
+                            type="button"
+                            onClick={() => { setSelectedService(service); setIsOpen(false); }}
+                            className="w-full px-4 py-3 text-left text-sm font-medium transition-colors duration-150"
+                            style={{ color: '#b8b4ae', borderBottom: '1px solid #2a2a2a' }}
+                            onMouseEnter={(e) => {
+                              (e.currentTarget as HTMLElement).style.background = 'rgba(240,192,64,0.08)';
+                              (e.currentTarget as HTMLElement).style.color = '#f0c040';
+                            }}
+                            onMouseLeave={(e) => {
+                              (e.currentTarget as HTMLElement).style.background = 'transparent';
+                              (e.currentTarget as HTMLElement).style.color = '#b8b4ae';
+                            }}
+                          >
+                            {service}
+                          </button>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                </div>
+
+                {/* Message */}
+                <div>
+                  <label className="block text-xs font-semibold text-ink-3 mb-2 tracking-wider uppercase">Message</label>
+                  <textarea
+                    rows={4}
+                    placeholder="Tell us about your vision..."
+                    className="w-full px-4 py-3.5 rounded-2xl text-sm text-ink placeholder-ink-3 outline-none transition-all duration-200 resize-none"
+                    style={{
+                      background: '#161616',
+                      border: '1px solid #2a2a2a',
+                    }}
+                    onFocus={(e) => (e.target as HTMLElement).style.borderColor = '#f0c040'}
+                    onBlur={(e) => (e.target as HTMLElement).style.borderColor = '#2a2a2a'}
+                  />
+                </div>
+
+                {/* Submit */}
+                <button
+                  type="submit"
+                  className="w-full py-4 rounded-2xl font-bold text-void bg-gold hover:bg-gold-2 transition-colors duration-200 text-sm tracking-wide"
+                >
+                  Send Proposal →
+                </button>
+              </form>
             </div>
-            <div>
-              <label className="block text-sm font-medium mb-2 ml-1">Message</label>
-              <textarea 
-                className="w-full px-5 py-4 bg-surface-container-lowest rounded-xl border-none focus:ring-2 focus:ring-primary/20 transition-all outline-none" 
-                placeholder="Tell us about your vision..." 
-                rows={4} 
-              ></textarea>
-            </div>
-            <button 
-              className="w-full py-5 hero-gradient text-white font-bold rounded-xl shadow-lg shadow-primary/20 hover:scale-[1.01] transition-transform" 
-              type="submit"
-            >
-              Send Proposal
-            </button>
-          </form>
+
+          </div>
         </div>
       </div>
     </section>
