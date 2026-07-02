@@ -1,22 +1,90 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
+import AnimatedButton from './AnimatedButton';
+
+const stats = [
+  { value: '150+', label: 'Launch Cycles', sub: 'Projects shipped globally' },
+  { value: '12M',  label: 'Daily Users',   sub: 'Across all platforms' },
+  { value: '48h',  label: 'Mean Recovery', sub: 'Incident response time' },
+  { value: '0',    label: 'Critical Vuln', sub: 'Security track record' },
+];
 
 const Stats: React.FC = () => {
-  const stats = [
-    { label: 'Launch Cycles', value: '150+' },
-    { label: 'Daily Users', value: '12M' },
-    { label: 'Mean Recovery', value: '48h' },
-    { label: 'Critical Vulnerabilities', value: '0' },
-  ];
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+    const items = ref.current?.querySelectorAll('.stat-item');
+    items?.forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
 
   return (
-    <section className="bg-surface-container-low py-32 px-8">
-      <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
-        {stats.map((stat, index) => (
-          <div key={index}>
-            <p className="text-6xl font-extrabold tracking-tighter text-primary mb-2">{stat.value}</p>
-            <p className="text-sm font-label uppercase tracking-widest text-on-surface-variant">{stat.label}</p>
+    <section id="platform" className="py-24 bg-void overflow-hidden">
+      {/* Section label */}
+      <div className="section-wrap mb-14">
+        <div className="micro-label mb-4">Numbers</div>
+        <h2
+          className="display-headline text-4xl md:text-5xl text-ink max-w-xl"
+          style={{ fontFamily: "'Space Grotesk', sans-serif" }}
+        >
+          Built for scale.<br />Proven by data.
+        </h2>
+      </div>
+
+      {/* Stats row */}
+      <div
+        ref={ref}
+        className="section-wrap grid grid-cols-2 lg:grid-cols-4 gap-0"
+      >
+        {stats.map((stat, i) => (
+          <div
+            key={stat.label}
+            className="stat-item opacity-0 translate-y-6 transition-all duration-700 border-l border-border-dk pl-8 py-8 first:border-l-0 first:pl-0"
+            style={{ transitionDelay: `${i * 120}ms` }}
+          >
+            <style>{`
+              .stat-item.in-view {
+                opacity: 1 !important;
+                transform: translateY(0) !important;
+              }
+            `}</style>
+            <div
+              className="font-mono text-6xl md:text-7xl font-bold text-ink leading-none mb-3 tracking-tighter"
+              style={{ fontFamily: "'JetBrains Mono', monospace" }}
+            >
+              <span className="gold-gradient-text">{stat.value}</span>
+            </div>
+            <div className="micro-label mb-1">{stat.label}</div>
+            <p className="text-ink-3 text-xs leading-relaxed">{stat.sub}</p>
           </div>
         ))}
+      </div>
+
+      {/* Bottom CTA row */}
+      <div className="section-wrap mt-14 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+        <hr className="divider flex-1" />
+        <AnimatedButton
+          id="stats-explore-platform"
+          href="#solutions"
+          variant="outline"
+          className="text-xs tracking-widest uppercase whitespace-nowrap"
+          icon={
+            <svg width="11" height="11" viewBox="0 0 12 12" fill="none">
+              <path d="M2.5 9.5L9.5 2.5M9.5 2.5H4M9.5 2.5V8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          }
+        >
+          Explore Platform
+        </AnimatedButton>
       </div>
     </section>
   );
