@@ -1,4 +1,5 @@
 import React from 'react';
+import { UnavailableLink } from './UnavailableToast';
 
 const footerNav = [
   {
@@ -81,10 +82,9 @@ const Footer: React.FC = () => {
             </p>
             {/* Social icons */}
             <div className="flex items-center gap-3 mt-6">
-              {socials.map((s) => (
-                <a
+            {socials.map((s) => (
+                <UnavailableLink
                   key={s.label}
-                  href={s.href}
                   aria-label={s.label}
                   className="w-8 h-8 rounded-full flex items-center justify-center text-ink-3 hover:text-ink transition-all duration-200"
                   style={{ background: '#161616', border: '1px solid #2a2a2a' }}
@@ -92,7 +92,7 @@ const Footer: React.FC = () => {
                   onMouseLeave={(e) => (e.currentTarget as HTMLElement).style.borderColor = '#2a2a2a'}
                 >
                   {s.icon}
-                </a>
+                </UnavailableLink>
               ))}
             </div>
           </div>
@@ -105,12 +105,11 @@ const Footer: React.FC = () => {
                 <ul className="space-y-3">
                   {col.links.map((link) => (
                     <li key={link}>
-                      <a
-                        href="#"
+                      <UnavailableLink
                         className="text-ink-3 text-sm hover:text-ink transition-colors duration-200"
                       >
                         {link}
-                      </a>
+                      </UnavailableLink>
                     </li>
                   ))}
                 </ul>

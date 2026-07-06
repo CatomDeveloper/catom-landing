@@ -23,6 +23,8 @@
     background-color: #080808;
     color: #f0ede8;
     overflow-x: hidden;
+    /* Padding for mobile tab bar (mobile) and desktop floating dock */
+    padding-bottom: 80px;
   }
 
   ::selection {
@@ -131,23 +133,101 @@
     background: linear-gradient(to right, transparent, #2a2a2a 20%, #2a2a2a 80%, transparent);
   }
 
-  /* -- Floating dock -- */
+  /* -- Floating dock — desktop only -- */
   .floating-dock {
     position: fixed;
-    bottom: 28px;
+    bottom: 24px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 100;
     backdrop-filter: blur(24px);
     -webkit-backdrop-filter: blur(24px);
-    background: rgba(20, 20, 20, 0.85);
-    border: 1px solid rgba(255,255,255,0.08);
+    background: rgba(20, 20, 20, 0.92);
+    border: 1px solid rgba(255,255,255,0.1);
     border-radius: 9999px;
-    padding: 10px 16px;
+    padding: 10px 14px;
     display: flex;
     align-items: center;
-    gap: 4px;
+    gap: 2px;
     box-shadow: 0 20px 60px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.04);
+  }
+
+  /* -- Mobile bottom tab bar -- */
+  .mobile-tab-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    backdrop-filter: blur(28px);
+    -webkit-backdrop-filter: blur(28px);
+    background: rgba(12, 12, 12, 0.95);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    align-items: stretch;
+    height: 68px;
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+    box-shadow: 0 -8px 40px rgba(0, 0, 0, 0.5);
+  }
+
+  .mobile-tab-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    text-decoration: none;
+    color: #6e6b66;
+    transition: color 0.22s ease, background 0.22s ease;
+    border-radius: 0;
+    position: relative;
+  }
+
+  .mobile-tab-item:first-child {
+    border-radius: 0 0 0 0;
+  }
+
+  .mobile-tab-item:active {
+    background: rgba(255, 255, 255, 0.04);
+  }
+
+  /* Highlight the last tab (Contact) with gold accent */
+  .mobile-tab-item:last-child {
+    color: #f0c040;
+  }
+
+  .mobile-tab-item:last-child .mobile-tab-icon {
+    background: rgba(240, 192, 64, 0.12);
+    border-color: rgba(240, 192, 64, 0.2);
+  }
+
+  .mobile-tab-icon {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background: transparent;
+    border: 1px solid transparent;
+    transition: background 0.25s ease, border-color 0.25s ease, transform 0.2s ease;
+  }
+
+  .mobile-tab-item:hover .mobile-tab-icon,
+  .mobile-tab-item:focus .mobile-tab-icon {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+  }
+
+  .mobile-tab-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.58rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    line-height: 1;
   }
 
   /* -- Gradient text -- */
