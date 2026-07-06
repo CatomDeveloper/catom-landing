@@ -2,8 +2,8 @@ import React, { useRef, useEffect } from 'react';
 import AnimatedButton from './AnimatedButton';
 
 const stats = [
-  { value: '150+', label: 'Launch Cycles', sub: 'Projects shipped globally' },
-  { value: '12M',  label: 'Daily Users',   sub: 'Across all platforms' },
+  { value: '10+', label: 'Launch Cycles', sub: 'Projects shipped globally' },
+  { value: '1k',  label: 'Daily Users',   sub: 'Across all platforms' },
   { value: '48h',  label: 'Mean Recovery', sub: 'Incident response time' },
   { value: '0',    label: 'Critical Vuln', sub: 'Security track record' },
 ];
